@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:700" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu"
+    crossorigin="anonymous"></script>
+  <script>document.addEventListener("touchstart", function () { }, true);</script>
+
+  <title>Better Place - Coming Soon</title>
+
+
+  <style>
+    /* Primary theme colors */
+    body[data-theme='light_theme'] {
+      --white: #fff;
+      --bg-color: #F8F8F8;
+      --color: #333;
+      --secondary-color: #ff7f57;
+      --icon-bg-color: #333;
+      --icon-color: #333;
+    }
+
+    body {
+      background: var(--bg-color);
+      color: var(--color);
+      text-align: center;
+    }
+
+    body[data-theme='dark_theme'] {
+      --white: #fff;
+      --bg-color: #000;
+      --color: #fff;
+      --secondary-color: #ff7f57;
+      --icon-bg-color: #333;
+      --icon-color: #fff;
+    }
+
+    /* Fade Down Animation */
+    @-webkit-keyframes fadeDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Apply the animation */
+    .fade-down {
+      animation: fadeDown 1s ease-out forwards;
+    }
+
+    .wrapper {
+      display: grid;
+      align-items: center;
+      height: 100vh;
+      animation: fadeDown 1s ease-out forwards;
+      -webkit-animation: fadeDown 1s ease-out forwards;
+
+    }
+
+    h1 {
+      font-size: 64px;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 0;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .dot {
+      color: var(--secondary-color);
+    }
+
+    p {
+      text-align: center;
+      margin: 18px;
+      font-family: 'Muli', sans-serif;
+      font-weight: normal;
+    }
+
+    .icons {
+      text-align: center;
+    }
+
+    .icons i {
+      color: var(--white);
+      background: var(--icon-bg-color);
+      height: 15px;
+      width: 15px;
+      padding: 13px;
+      margin: 0 10px;
+      border-radius: 50px;
+      border: 2px solid transparent;
+      transition: all 200ms ease;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .icons i:hover,
+    .icons i:active {
+      color: var(--icon-color);
+      background: none;
+      border-color: var(--icon-bg-color);
+      cursor: pointer !important;
+      transform: scale(1.2);
+      -webkit-transform: scale(1.2);
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <body data-theme="light_theme">
+    <div class="wrapper">
+      <div class="row mx-0">
+        <div class="col-md-7 col-12 my-auto mx-auto">
+          <h1>Coming soon<span class="dot">.</span></h1>
+          <p>We are building our website.</p>
+          <!-- <div class="icons">
+            <a href=""><i class="fa fa-twitter"></i></a>
+            <a href=""><i class="fa fa-youtube-play"></i></a>
+            <a href=""><i class="fa fa-paper-plane"></i></a>
+          </div> -->
+        </div>
+        <div class="col-md-5 col-12 my-auto mx-auto">
+          <img src="./img/anirudh.png" alt="" class="rounded-3 w-75">
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      function setThemePreference() {
+        var d = new Date();
+        /*
+        * The getHours() method returns the hour (from 0 to 23) of the specified date and time.
+        * Early mornig = 0 - 6
+        * Morning = 6 - 12
+        * Evening = 12 - 18
+        * Night = 18 - 23
+        */
+        var currentHour = d.getHours();
+
+        if (currentHour >= 19 || currentHour <= 6) {
+          document.body.setAttribute("data-theme", "dark_theme")
+        } else {
+          document.body.setAttribute("data-theme", "light_theme")
+        }
+      }
+
+      window.onload = setThemePreference;
+    </script>
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+  </body>
+
+</html>

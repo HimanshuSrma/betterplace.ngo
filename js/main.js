@@ -87,26 +87,56 @@ $(document).ready(function($) {
     	animateIn: 'fadeIn',
 		});
 
+		
+		
+		$('.whoWeAre').owlCarousel({
+			center: false,
+			items: 1,
+			loop: true,
+			// stagePadding: 0,
+			// margin: 30,
+			nav: true,
+			autoplay: true,
+			autoPlay: 200,
+			slideSpeed: 300,
+			navText: ['<span class="ion-md-arrow-back">', '<span class="ion-md-arrow-forward">'],
+			responsive:{
+			600:{
+				// stagePadding: 0,
+				items:1
+			},
+			800:{
+				// stagePadding: 40,
+				  items:1
+			},
+			1000:{
+				// stagePadding: 80,
+				  items:1
+			}
+			}
+			});
+
+		
 		$('.nonloop-block-11').owlCarousel({
-	    center: true,
+	    center: false,
 	    items: 1,
 	    loop: false,
-			stagePadding: 0,
+		stagePadding: 0,
 	    margin: 30,
 	    nav: true,
-			navText: ['<span class="ion-md-arrow-back">', '<span class="ion-md-arrow-forward">'],
+		navText: ['<span class="ion-md-arrow-back">', '<span class="ion-md-arrow-forward">'],
 	    responsive:{
         600:{
-        	stagePadding: 0,
-          items:1
+        	// stagePadding: 0,
+        	items:1
         },
         800:{
-        	stagePadding: 40,
-          items:2
+        	// stagePadding: 40,
+          	items:2
         },
         1000:{
-        	stagePadding: 80,
-          items:3
+        	// stagePadding: 80,
+          	items:3
         }
 	    }
 		});
